@@ -1,0 +1,14 @@
+{
+  "OrbitalBlues.AttributeHeart": "Heart",
+  "OrbitalBlues.AttributeBlues": "Blues",
+  "OrbitalBlues.StatsMuscle": "Muscle",
+  "OrbitalBlues.StatsGrit": "Grit",
+  "OrbitalBlues.StatsSavvy": "Savvy",
+
+  "OrbitalBlues.EffectCreate": "Create Effect",
+  "OrbitalBlues.EffectToggle": "Toggle Effect",
+  "OrbitalBlues.EffectEdit": "Edit Effect",
+  "OrbitalBlues.EffectDelete": "Delete Effect",
+
+  "OrbitalBlues.Add": "Add"
+}

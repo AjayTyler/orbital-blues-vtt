@@ -1,0 +1,53 @@
+<form class="{{cssClass}} {{actor.type}} grid-vehicle-sheet-layout">
+  <section class="grid-vehicle-stats-layout">
+    <h1 class="grid-heading">Registration: <input name="name" type="text" value="{{actor.name}}" /></h1>
+    <div class="character-sheet-image">
+      <img
+        class="profile"
+        src="{{actor.img}}"
+        data-tooltip="{{actor.name}}"
+        title="actor.name"
+        data-edit="img"
+      />
+      <select name="system.stats.size" id="{{actor.id}}-size">
+        {{ selectOptions ORBITALBLUES.SHIPSIZES selected=system.stats.size labelAttr="label" }}
+      </select>
+    </div>
+    <div class="grid-generic-rows">
+      <div>
+        <label for="{{actor.id}}-body"  class="rollable" data-roll="@stats.body" data-label="Body">
+          Body <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.body name="system.stats.body" step=1 id="{{actor.id}}-body" }}
+      </div>
+      <div>
+        <label for="{{actor.id}}-mobility"  class="rollable" data-roll="@stats.mobility" data-label="Mobility">
+          Mobility <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.mobility name="system.stats.mobility" step=1 id="{{actor.id}}-mobility" }}
+      </div>
+      <div>
+        <label for="{{actor.id}}-systems"  class="rollable" data-roll="@stats.systems" data-label="Systems">
+          Systems <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.systems name="system.stats.systems" step=1 id="{{actor.id}}-systems" }}
+      </div>
+      <div class="grid-cell-bottom">
+        <label for="{{actor.id}}-situation">Situation</label>
+        <select name="system.stats.situation" id="{{actor.id}}-situation">
+          {{ selectOptions ORBITALBLUES.SITUATIONS selected=system.stats.situation labelAttr="label" }}
+        </select>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h1 class="grid-heading">Equipment &amp; Cargo</h1>
+    {{
+      editor system.notes
+      button=true
+      owner=owner
+      editable=editable
+      target="system.notes"
+    }}
+  </section>
+</form>

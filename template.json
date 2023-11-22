@@ -1,0 +1,28 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "vehicle"
+    ],
+    "htmlFields": [
+      "biography",
+      "equipment",
+      "troubles",
+      "gambits"
+    ]
+  },
+
+  "Item": {
+    "types": [
+      "item",
+      "equipment",
+      "gambit",
+      "trouble",
+      "weapon"
+    ],
+    "htmlFields": [
+      "description"
+    ]
+  }
+}

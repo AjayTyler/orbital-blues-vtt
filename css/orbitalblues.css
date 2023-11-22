@@ -1,0 +1,195 @@
+/* # Font Choice */
+.ob p, label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ob label {
+  font-weight: 800;
+}
+
+.ob h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: none;
+}
+
+.ob label {
+  display: block;
+}
+
+/* # Form Inputs */
+
+.ob input {
+  border: none;
+  border-bottom: 2px dotted black;
+  background-color: inherit;
+  width: 100%;
+  font-size: medium;
+  text-align: left;
+}
+
+.grid-heading input {
+  max-width: 16em;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ob select {
+  width: 100%;
+}
+
+/* ## Removes arrows from form input */
+/* ### Chrome, Safari, Edge, Opera */
+/* .ob input::-webkit-outer-spin-button,
+.ob input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+} */
+
+/* ### Firefox */
+/* .ob input[type=number] {
+  appearance: textfield;
+} */
+
+.rollable {
+  cursor: pointer;
+}
+
+/* ## Editor */
+
+.ob .editor {
+  min-height: 50px;
+  max-height: 300px;
+  border: 1px solid black;
+  padding: 20px 20px 10px 20px;
+}
+
+/* # Layout */
+
+/* ## Grid Helpers and Generic */
+
+.grid-generic-2-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem
+}
+
+.grid-generic-rows {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-generic-rows select {
+  margin-top: 3px;
+}
+
+.grid-cell-bottom {
+  margin-top: auto;
+}
+
+.grid-heading {
+  grid-area: heading;
+  text-align: center;
+  border-top: 3px solid black;
+  padding-top: 0.5em;
+}
+
+.grid-heading .centered {
+  text-align: center;
+}
+
+.big-sheet-button {
+  display: grid;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+div.character-sheet-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+/* ## Character Sheet Layouts */
+
+.grid-character-sheet-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    'stats'
+    'troubles-gambits'
+    'equipment';
+}
+
+.grid-character-attributes-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 20% 1fr 1fr 1fr;
+  grid-template-rows: min-content min-content;
+  grid-template-areas:
+    'heading heading heading heading'
+    'portrait attributes1 attributes2 buttons';
+}
+
+.grid-character-troubles-gambits-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'heading heading'
+    'troubles gambits';
+}
+
+.trouble {
+  grid-area: troubles;
+}
+
+.gambit {
+  grid-area: gambits;
+}
+
+/* ## Vehicle Sheet Layout */
+
+.grid-vehicle-sheet-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    'vehicleStats'
+    'notes';
+}
+
+.grid-vehicle-stats-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-area: vehicleStats;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content;
+  grid-template-areas:
+    'heading heading'
+    'portrait attributes';
+}
+
+/* ## NPC Sheet Layout */
+
+.grid-npc-sheet-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    'heading heading'
+    'portrait attributes'
+    'notes notes';
+}
+
+.grid-notes {
+  grid-area: notes;
+}
+
+/* .grid-npc-stats-layout {
+
+} */

@@ -1,0 +1,65 @@
+<form class="{{cssClass}} {{actor.type}} grid-npc-sheet-layout">
+  <h1 class="grid-heading">
+    <input class="centered" name="name" type="text" value="{{actor.name}}" />
+  </h1>
+  <section class="character-sheet-image">
+    <img
+      class="profile"
+      src="{{actor.img}}"
+      data-tooltip="{{actor.name}}"
+      title="actor.name"
+      data-edit="img"
+    />
+    <select name="system.npcType" id="{{actor.id}}-npcType">
+      {{ selectOptions ORBITALBLUES.NPCTYPES selected=system.npcType labelAttr="label" }}
+    </select>
+  </section>
+  <section class="grid-generic-rows">
+    {{#if system.isMark}}
+    <div>
+      <label for="{{actor.id}}-heart" data-label="Heart">
+        Heart
+      </label>
+      {{ numberInput system.stats.heart name="system.stats.heart" step=1 id="{{actor.id}}-heart" }}
+    </div>
+    {{/if}}
+    <div>
+      <label for="{{actor.id}}-muscle" class="rollable" data-roll="@stats.muscle" data-label="Muscle">
+        Muscle <i class="fas fa-dice-d6"></i>
+      </label>
+      {{ numberInput system.stats.muscle name="system.stats.muscle" step=1 id="{{actor.id}}-muscle" }}
+    </div>
+
+    <div>
+      <label for="{{actor.id}}-grit" class="rollable" data-roll="@stats.grit" data-label="Grit">
+        Grit <i class="fas fa-dice-d6"></i>
+      </label>
+      {{ numberInput system.stats.grit name="system.stats.grit" step=1 id="{{actor.id}}-grit" }}
+    </div>
+
+    <div>
+      <label for="{{actor.id}}-savvy"  class="rollable" data-roll="@stats.savvy" data-label="Savvy">
+        Savvy <i class="fas fa-dice-d6"></i>
+      </label>
+      {{ numberInput system.stats.savvy name="system.stats.savvy" step=1 id="{{actor.id}}-savvy" }}
+    </div>
+    <div class="grid-cell-bottom">
+      <label for="{{actor.id}}-situation">Situation</label>
+      <select name="system.stats.situation" id="{{actor.id}}-situation">
+        {{ selectOptions ORBITALBLUES.SITUATIONS selected=system.stats.situation labelAttr="label" }}
+      </select>
+    </div>
+  </section>
+
+  <section class="grid-notes">
+    <h1 class="grid-heading">Equipment &amp; Mementos</h1>
+    {{
+      editor system.equipment
+      button=true
+      owner=owner
+      editable=editable
+      target="system.equipment"
+    }}
+  </section>
+
+</form>

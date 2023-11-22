@@ -1,0 +1,114 @@
+<form class="{{cssClass}} {{actor.type}} grid-character-sheet-layout">
+
+  {{!-- Character Profile --}}
+  <section class="grid-character-attributes-layout">
+    <h1 class="grid-heading">Outlaw Profile: <input name="name" type="text" value="{{actor.name}}" /></h1>
+
+    <div class="character-sheet-image">
+      <img
+        class="profile"
+        src="{{actor.img}}"
+        data-tooltip="{{actor.name}}"
+        title="actor.name"
+        data-edit="img"
+      />
+      <select name="system.stats.situation" id="{{actor.id}}-situation">
+        {{ selectOptions ORBITALBLUES.SITUATIONS selected=system.stats.situation labelAttr="label" }}
+      </select>
+    </div>
+
+    {{!-- Attributes: Hearts, Blues, Credits, and Debts --}}
+    <div class="grid-generic-rows">
+      <div>
+        <label for="{{actor.id}}-heart">Heart</label>
+        {{ numberInput system.stats.heart name="system.stats.heart" step=1 id="{{actor.id}}-heart" }}
+      </div>
+
+      <div>
+        <label for="{{actor.id}}-blues">Blues</label>
+        {{ numberInput system.stats.blues name="system.stats.blues" step=1 id="{{actor.id}}-blues" }}
+      </div>
+
+      <div class="grid-generic-2-columns">
+        <div>
+          <label for="{{actor.id}}-credits">Credits</label>
+          {{ numberInput system.credits name="system.credits" step=1 id="{{actor.id}}-credits" }}
+        </div>
+
+        <div>
+          <label for="{{actor.id}}-debts">Debts</label>
+          {{ numberInput system.debts name="system.debts" step=1 id="{{actor.id}}-debts" }}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Attributes: Muscle, Grit, Savvy --}}
+    <div class="grid-generic-rows">
+      <div>
+        <label for="{{actor.id}}-muscle" class="rollable" data-roll="@stats.muscle" data-label="Muscle">
+          Muscle <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.muscle name="system.stats.muscle" step=1 id="{{actor.id}}-muscle" }}
+      </div>
+
+      <div>
+        <label for="{{actor.id}}-grit" class="rollable" data-roll="@stats.grit" data-label="Grit">
+          Grit <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.grit name="system.stats.grit" step=1 id="{{actor.id}}-grit" }}
+      </div>
+
+      <div>
+        <label for="{{actor.id}}-savvy"  class="rollable" data-roll="@stats.savvy" data-label="Savvy">
+          Savvy <i class="fas fa-dice-d6"></i>
+        </label>
+        {{ numberInput system.stats.savvy name="system.stats.savvy" step=1 id="{{actor.id}}-savvy" }}
+      </div>
+    </div>
+    <div class="grid-generic-rows">
+      <div class="big-sheet-button rollable" for="{{actor.id}}-initiative" id="{{actor.id}}-initiative" data-roll="1d3 + @stats.savvy" data-label="Initiative" >
+        <i class="fas fa-bolt"></i>
+        <p>Initiative</p>
+      </div>
+      <div class="rollable big-sheet-button" for="{{actor-id}}-attack" data-roll="1" data-combat-roll="1" id="{{actor.id}}-attack" data-label="Attack">
+        <i class="fas fa-fist-raised"></i>
+        <p>Attack</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="grid-character-troubles-gambits-layout">
+    <h1 class="grid-heading">Troubles &amp; Gambits</h1>
+    <div class="trouble">
+      {{
+        editor system.troubles
+        button=true
+        owner=owner
+        editable=editable
+        target="system.troubles"
+      }}
+    </div>
+    <div class="gambits">
+      {{
+        editor system.gambits
+        button=true
+        owner=owner
+        editable=editable
+        target="system.gambits"
+      }}
+    </div>
+  </section>
+
+  <section>
+    <h1 class="grid-heading">Equipment &amp; Mementos</h1>
+    {{
+      editor system.equipment
+      button=true
+      owner=owner
+      editable=editable
+      target="system.equipment"
+    }}
+  </section>
+
+</form>
