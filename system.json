@@ -2,7 +2,7 @@
   "id": "orbital-blues-vtt",
   "title": "Orbital Blues",
   "description": "A third-party FoundryVTT system for Orbital Blues",
-  "version": "0.01",
+  "version": "v0.01",
   "compatibility": {
     "minimum": 10,
     "verified": "11.314",
@@ -28,7 +28,7 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "heart",
   "secondaryTokenAttribute": "blues",
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/AjayTyler/orbital-blues-vtt",
+  "manifest": "https://github.com/AjayTyler/orbital-blues-vtt/releases/latest/download/system.json",
+  "download": "https://github.com/AjayTyler/orbital-blues-vtt/releases/latest/download/orbital-blues-vtt.zip"
 }
