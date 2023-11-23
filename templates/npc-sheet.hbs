@@ -2,6 +2,7 @@
   <h1 class="grid-heading">
     <input class="centered" name="name" type="text" value="{{actor.name}}" />
   </h1>
+
   <section class="character-sheet-image">
     <img
       class="profile"
@@ -14,6 +15,7 @@
       {{ selectOptions ORBITALBLUES.NPCTYPES selected=system.npcType labelAttr="label" }}
     </select>
   </section>
+
   <section class="grid-generic-rows">
     {{#if system.isMark}}
     <div>
@@ -48,6 +50,21 @@
       <select name="system.stats.situation" id="{{actor.id}}-situation">
         {{ selectOptions ORBITALBLUES.SITUATIONS selected=system.stats.situation labelAttr="label" }}
       </select>
+    </div>
+  </section>
+
+  <section class="grid-generic-rows">
+    <div class="big-sheet-button rollable" for="{{actor.id}}-initiative" id="{{actor.id}}-initiative" data-roll="1d3 + @stats.savvy" data-label="Initiative" >
+      <div>
+        <i class="fas fa-bolt"></i>
+        <p>Initiative</p>
+      </div>
+    </div>
+    <div class="rollable big-sheet-button" for="{{actor-id}}-attack" data-roll="1" data-combat-roll="1" id="{{actor.id}}-attack" data-label="Attack">
+      <div>
+        <i class="fas fa-fist-raised"></i>
+        <p>Attack</p>
+      </div>
     </div>
   </section>
 
