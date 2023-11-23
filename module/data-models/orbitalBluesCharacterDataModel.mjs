@@ -10,17 +10,17 @@ export default class CharacterData extends foundry.abstract.DataModel {
       stats: new fields.SchemaField({
         heart: new fields.NumberField({
           required: true,
-          initial: 1,
+          initial: 8,
           integer: true
         }),
         blues: new fields.NumberField({
           required: true,
-          initial: 2,
+          initial: 0,
           integer: true
         }),
         muscle: new fields.NumberField({
           required: true,
-          initial: 3,
+          initial: 0,
           integer: true
         }),
         grit: new fields.NumberField({
