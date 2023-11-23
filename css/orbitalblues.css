@@ -38,19 +38,6 @@
   width: 100%;
 }
 
-/* ## Removes arrows from form input */
-/* ### Chrome, Safari, Edge, Opera */
-/* .ob input::-webkit-outer-spin-button,
-.ob input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
-} */
-
-/* ### Firefox */
-/* .ob input[type=number] {
-  appearance: textfield;
-} */
-
 .rollable {
   cursor: pointer;
 }
@@ -58,7 +45,7 @@
 /* ## Editor */
 
 .ob .editor {
-  min-height: 50px;
+  min-height: 150px;
   max-height: 300px;
   border: 1px solid black;
   padding: 20px 20px 10px 20px;
@@ -106,10 +93,19 @@
   padding-top: 5px;
 }
 
+.big-sheet-button div {
+  margin: auto;
+}
+
 div.character-sheet-image {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
+}
+
+/* This is required to whip the editor into submission */
+.ob .tox.tox-tinymce {
+  min-height: 150px;
 }
 
 /* ## Character Sheet Layouts */
@@ -117,7 +113,8 @@ div.character-sheet-image {
 .grid-character-sheet-layout {
   display: grid;
   gap: 1.5rem;
-  grid-template-rows: repeat(3, min-content);
+  /* grid-template-rows: repeat(3, min-content); */
+  grid-template-rows: min-content auto min-content;
   grid-template-areas:
     'stats'
     'troubles-gambits'
@@ -178,18 +175,14 @@ div.character-sheet-image {
 .grid-npc-sheet-layout {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(2, min-content);
   grid-template-areas:
-    'heading heading'
-    'portrait attributes'
-    'notes notes';
+    'heading heading heading'
+    'portrait attributes buttons'
+    'notes notes notes';
 }
 
 .grid-notes {
   grid-area: notes;
 }
-
-/* .grid-npc-stats-layout {
-
-} */
