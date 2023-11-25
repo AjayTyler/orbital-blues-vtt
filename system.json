@@ -2,7 +2,7 @@
   "id": "orbital-blues-vtt",
   "title": "Orbital Blues",
   "description": "A third-party FoundryVTT system for Orbital Blues",
-  "version": "v0.01b",
+  "version": "v0.0.2-alpha",
   "compatibility": {
     "minimum": 10,
     "verified": "11.314",
