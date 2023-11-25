@@ -24,5 +24,9 @@ export default {
     mob: {label: 'Mob'},
     organization: {label: 'Organization'},
     mark: {label: 'Mark'}
+  },
+  FEATURETYPES: {
+    gambit: {label: 'Gambit'},
+    trouble: {label: 'Trouble'}
   }
 }

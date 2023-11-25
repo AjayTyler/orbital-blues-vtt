@@ -7,19 +7,14 @@
     ],
     "htmlFields": [
       "biography",
-      "equipment",
-      "troubles",
-      "gambits"
+      "equipment"
     ]
   },
 
   "Item": {
     "types": [
-      "item",
-      "equipment",
       "gambit",
-      "trouble",
-      "weapon"
+      "trouble"
     ],
     "htmlFields": [
       "description"

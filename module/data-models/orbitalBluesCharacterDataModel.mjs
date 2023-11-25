@@ -1,4 +1,5 @@
 import ORBITALBLUES from "../constants.mjs";
+import OrbitalBluesItem from "../documents/item.mjs";
 
 export default class CharacterData extends foundry.abstract.DataModel {
   static defineSchema() {
@@ -6,6 +7,16 @@ export default class CharacterData extends foundry.abstract.DataModel {
     return {
       biography: new fields.HTMLField(),
       equipment: new fields.HTMLField(),
+
+      troubles: new fields.SetField(
+        new fields.ForeignDocumentField(
+          OrbitalBluesItem,
+          {required: true, type: "trouble"})),
+
+      gambits: new fields.SetField(
+        new fields.ForeignDocumentField(
+          OrbitalBluesItem,
+          {required: true, type: "gambit"})),
 
       stats: new fields.SchemaField({
         heart: new fields.NumberField({
@@ -60,10 +71,7 @@ export default class CharacterData extends foundry.abstract.DataModel {
       }),
 
       credits: new fields.NumberField({required: true, initial: 0, integer: true}),
-      debts: new fields.NumberField({required: true, initial: 0, integer: true}),
-
-      gambits: new fields.HTMLField(),
-      troubles: new fields.HTMLField()
+      debts: new fields.NumberField({required: true, initial: 0, integer: true})
 
     }
   }

@@ -3,7 +3,7 @@
  * @extends {ActorSheet}
  */
 
-export class OrbitalBluesActorSheet extends ActorSheet {
+export default class OrbitalBluesActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
@@ -89,14 +89,17 @@ export class OrbitalBluesActorSheet extends ActorSheet {
     const gambits = [];
     const troubles = [];
 
+    console.log(context.items)
+
     for (let i of context.items) {
       // Populate gambits
       if (i.type === 'gambit') {
-        gambits.push(i);
+        context.system.gambits.push(i)
       }
       // Populate troubles
       if (i.type === 'trouble') {
         troubles.push(i)
+        context.system.troubles.push(i)
       }
     }
 
@@ -134,9 +137,6 @@ export class OrbitalBluesActorSheet extends ActorSheet {
       item.delete();
       li.slideUp(200, () => this.render(false));
     });
-
-    // Active Effect management
-    // html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));

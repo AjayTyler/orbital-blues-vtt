@@ -108,6 +108,19 @@ div.character-sheet-image {
   min-height: 150px;
 }
 
+.editor-content strong.heart {
+  color: #df5d00;
+}
+
+.editor-content strong.blues {
+  color: #003adf;
+}
+
+.item-control i {
+  float: right;
+  padding-right: 3px;
+}
+
 /* ## Character Sheet Layouts */
 
 .grid-character-sheet-layout {

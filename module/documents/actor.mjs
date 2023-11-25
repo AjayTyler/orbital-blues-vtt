@@ -4,7 +4,7 @@ import ORBITALBLUES from '../constants.mjs';
  * Extend the base Actor document by defining a custom roll data structure which is ideal for our system.
  * @extends {Actor}
  */
-export class OrbitalBluesActor extends Actor {
+export default class OrbitalBluesActor extends Actor {
 
   /** @override */
   prepareData() {
@@ -44,9 +44,6 @@ export class OrbitalBluesActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-
-    // console.log(systemData)
-    // console.log(ORBITALBLUES.SKILLROLL)
 
     systemData.taskRollFormula = ORBITALBLUES.SKILLROLL[systemData.stats.situation].value;
     systemData.combatRollFormula = ORBITALBLUES.COMBATROLL[systemData.stats.situation].value;

@@ -5,9 +5,11 @@ import NpcData from './data-models/orbitalBluesNpcDataModel.mjs'
 // Import constants
 import ORBITALBLUES from './constants.mjs';
 // Import document classes.
-import { OrbitalBluesActor } from './documents/actor.mjs';
+import OrbitalBluesActor from './documents/actor.mjs';
+import OrbitalBluesItem from './documents/item.mjs';
 // Import sheet classes.
-import { OrbitalBluesActorSheet } from './sheets/actor-sheet.mjs';
+import OrbitalBluesActorSheet from './sheets/actor-sheet.mjs';
+import OrbitalBluesItemSheet from './sheets/item-sheet.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -20,7 +22,8 @@ Hooks.once('init', async function() {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.orbitalblues = {
-    OrbitalBluesActor
+    OrbitalBluesActor,
+    OrbitalBluesItem
   };
 
   // Add custom constants for configuration.
@@ -42,12 +45,13 @@ Hooks.once('init', async function() {
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = OrbitalBluesActor;
-  // CONFIG.Item.documentClass = OrbitalBluesItem;
+  CONFIG.Item.documentClass = OrbitalBluesItem;
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
   Actors.registerSheet('orbitalblues', OrbitalBluesActorSheet, { makeDefault: true });
-  // Items.unregisterSheet('core', ItemSheet);
+  Items.unregisterSheet('core', ItemSheet);
+  Items.registerSheet('orbitalblues', OrbitalBluesItemSheet, { makeDefault: true });
 
 });
 
