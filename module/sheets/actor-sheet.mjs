@@ -89,8 +89,6 @@ export default class OrbitalBluesActorSheet extends ActorSheet {
     const gambits = [];
     const troubles = [];
 
-    console.log(context.items)
-
     for (let i of context.items) {
       // Populate gambits
       if (i.type === 'gambit') {
@@ -205,8 +203,6 @@ export default class OrbitalBluesActorSheet extends ActorSheet {
           }
         }
       )()
-
-      console.log(rollFormula)
 
       let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(rollFormula, rollData);

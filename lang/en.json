@@ -4,11 +4,10 @@
   "OrbitalBlues.StatsMuscle": "Muscle",
   "OrbitalBlues.StatsGrit": "Grit",
   "OrbitalBlues.StatsSavvy": "Savvy",
+  "OrbitalBlues.StatsCredits": "Credits",
+  "OrbitalBlues.StatsDebts": "Savvy",
 
-  "OrbitalBlues.EffectCreate": "Create Effect",
-  "OrbitalBlues.EffectToggle": "Toggle Effect",
-  "OrbitalBlues.EffectEdit": "Edit Effect",
-  "OrbitalBlues.EffectDelete": "Delete Effect",
-
-  "OrbitalBlues.Add": "Add"
+  "OrbitalBlues.TroublesAndGambits": "Troubles &amp; Gambits",
+  "OrbitalBlues.AddGambit": "Add Gambit",
+  "OrbitalBlues.AddTrouble": "Add Trouble"
 }
