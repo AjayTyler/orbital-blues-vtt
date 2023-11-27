@@ -26,7 +26,7 @@ export default class OrbitalBluesActorSheet extends ActorSheet {
   }
 
   /** @override */
-  getData() {
+  async getData() {
     // Retrieve the data structure from the base sheet. You can inspect or log
     // the context variable to see the structure, but some key properties for
     // sheets are the actor object, the data object, whether or not it's
@@ -56,6 +56,7 @@ export default class OrbitalBluesActorSheet extends ActorSheet {
 
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
+    context.system.enrichedEquipment = await TextEditor.enrichHTML(context.rollData.equipment)
 
     // Prepare active effects
     // context.effects = prepareActiveEffectCategories(this.actor.effects);

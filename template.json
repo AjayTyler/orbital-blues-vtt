@@ -7,7 +7,9 @@
     ],
     "htmlFields": [
       "biography",
-      "equipment"
+      "equipment",
+      "gambits",
+      "troubles"
     ]
   },
 
